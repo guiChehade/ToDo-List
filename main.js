@@ -63,6 +63,7 @@ const Main = {
 
         removeButton_click: function (event) {
             let li = event.target.parentElement
+
             li.classList.add('removed')
             setTimeout(() => {
                 li.classList.add('hidden')
