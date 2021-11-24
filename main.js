@@ -13,6 +13,7 @@ const Main = {
         this.$inputTask = document.querySelector('#inputTask')
         this.$list = document.querySelector('#list')
         this.$removeButtons = document.querySelectorAll('.remove')
+        this.$BotaoSubmit = document.querySelector('#BotaoSubmit')
     },
     bindEvents: function () {
         // Bind the events

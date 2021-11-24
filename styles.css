@@ -7,15 +7,64 @@
   box-sizing: border-box;
 }
 
+body label{
+    
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000;
+}
+
 body{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    font-size: 16px;
+    font-size: 1rem;
     font-family: 'Roboto Condensed', Arial, sans-serif;
     background: #121212;
+}
+
+#inputTask{
+    padding: 0px;
+    margin-bottom: 1rem;
+    font-size: 1.7rem;
+    border-radius: 5px;
+}
+
+#BotaoSubmit{
+    
+    font-size: 1.6rem;
+    border-radius: 5px;
+    background: #de3f53;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 0.3rem;
+}
+
+#Alinharbotao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    padding: 0.5rem;  
+}
+
+footer {
+    padding: 1.5rem;
+}
+
+#data1{
+    width: 40%;
+}
+
+#data2{
+    width: 40%;
+}
+
+footer label {
+    color: white;
 }
 
 .toDoList{
