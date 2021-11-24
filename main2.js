@@ -2,7 +2,7 @@ const buttao = document.querySelector("#button");
 const inputizin = document.querySelector("#inputzin");
 const listinha = document.querySelector("#list");
 const conteudo = document.createElement("li");
-let buttonzinho2 = document.querySelectorAll('.remove');
+let buttonzinho2 = document.querySelectorAll(".remove");
 const li2 = listinha.children;
 
 async function main(event) {
@@ -19,7 +19,7 @@ async function main(event) {
         <label class="task">
         ${`O texto do id ${text[i].id}, título "${text[i].title}" está ${text[i].completed}`}
         </label>
-        <button class="remove"></button>
+        <button onclick=testinho(event) class="remove"></button>
         </li>`;
   }
 
@@ -30,23 +30,19 @@ async function main(event) {
       li[i].classList.add("notdone");
     }
   }
-  
 }
 buttao.addEventListener("click", main);
 
-
 function testinho(event) {
-    console.log(event.target.parentElement);
-    
-    // li2.classList.add("hidden");
-    event.target.parentElement.classList.add("removed");
-    setTimeout(() => {
-        event.target.parentElement.classList.add("hidden");
-    }, 300);
+  console.log(event.target.parentElement);
+
+  // li2.classList.add("hidden");
+  event.target.parentElement.classList.add("removed");
+  setTimeout(() => {
+    event.target.parentElement.classList.add("hidden");
+  }, 300);
 }
 
 buttonzinho2.forEach((element) => {
-    element.addEventListener("click", testinho);
+  element.addEventListener("click", testinho);
 });
-
-
