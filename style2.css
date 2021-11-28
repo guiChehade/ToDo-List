@@ -11,7 +11,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     flex-direction: column;
     font-size: 16px;
     font-family: 'Roboto Condensed', Arial, sans-serif;
@@ -24,8 +23,17 @@ main{
 }
 
 
-.toDoList{
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
+    height: 100%;
+}
+
+.toDoList{
+    width: 95%;
     max-width: 600px;
 }
 
@@ -109,6 +117,10 @@ main{
     text-decoration: line-through;
 }
 
+.wrapper-list ul.list .task{
+    width: 90%;
+}
+
 .wrapper-list button.remove{
     position: absolute;
     top: 20px;
@@ -143,6 +155,18 @@ main{
     font-family: "Roboto Condensed", Arial, sans-serif;
     font-size: 1.2em;
     color: white;
+}
+
+#BotaoSubmit{
+    font-size: 1rem;
+    border-radius: 5px;
+    background: #de3f53;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin: 1rem;
+    box-shadow: 1px 1px 10px #121212;
 }
 
 @keyframes collapseItem{

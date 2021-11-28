@@ -1,4 +1,4 @@
-const buttao = document.querySelector("#button");
+const buttao = document.querySelector("#BotaoSubmit");
 const inputizin = document.querySelector("#inputzin");
 const listinha = document.querySelector("#list");
 const conteudo = document.createElement("li");
@@ -17,7 +17,7 @@ async function main(event) {
     listinha.innerHTML += `<li>
         <div class="check"></div>
         <label class="task">
-        ${`O texto do id ${text[i].id}, título "${text[i].title}" está ${text[i].completed}`}
+        ${`ID ${text[i].id} - ${text[i].title}`}
         </label>
         <button onclick=testinho(event) class="remove"></button>
         </li>`;

@@ -33,7 +33,7 @@ const Main = {
         })
 
         // this.$inputTask.onkeyup = this.Events.inputTask_keypress.bind(this)
-        this.$BotaoSubmit.onclick = this.Events.inputTask_keypress.bind(this)
+        this.$BotaoSubmit.onclick = this.Events.inputTask_click.bind(this)
         
         this.$removeButtons.forEach(button => {
             button.addEventListener('click', this.Events.removeButton_click)
@@ -50,45 +50,39 @@ const Main = {
             li.classList.remove('done')
         },
 
-        inputTask_keypress: function (event) {
+        inputTask_click: function (event) {
             // this.validacao.validarinput();
-            
-            const key = event.key
             console.log(event)
-            const value = event.target.value
-            if (this.$inputTask.value == "" || this.$inputTask.value.length < 11) {
-                alert("Por favor, preencha o campo de tarefa e insira mais que onze caracteres");}
-                else if (this.$dataInput2.value == "") {
-                alert("Por favor, preencha o campo de data");
-
+            if (this.$inputTask.value.length < 11) {
+                alert("Por favor, a tarefa deve ter mais que dez caracteres");
+            } else if (this.$dataInput2.value < this.$dataInput.value) {
+                alert("Por favor, a data limite não pode ser anterior à data de criação");
             } else {            
-            if (event.type === 'click') {
                 this.$list.innerHTML += `
                     <li>
                         <div class="check"></div>
                         <label class="task">
-                        Data de criação: ${this.$dataAtual}, Data Limite: ${this.$dataInput2.value}, Tarefa: ${this.$inputTask.value}
+                        Criado em: ${this.$dataAtual}, Limite: ${this.$dataInput2.value}, ${this.$inputTask.value}
                         </label>
                         <button class="remove"></button>
                     </li>
                 `
 
                 this.$inputTask.value = ""
-
                 this.cacheSelectors()
                 this.bindEvents()
-                console.log(this.$list)
             }
-        }
         },
 
         removeButton_click: function (event) {
             let li = event.target.parentElement
 
-            li.classList.add('removed')
-            setTimeout(() => {
+            if (confirm('Tem certeza que deseja remover esta tarefa?')) {
+                li.classList.add('removed')
+                setTimeout(() => {
                 li.classList.add('hidden')
             }, 300)
+            }
         }
     }
 }

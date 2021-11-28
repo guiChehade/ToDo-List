@@ -8,10 +8,9 @@
 }
 
 body label{
-    
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #000;
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
 }
 
 body{
@@ -22,25 +21,26 @@ body{
     height: 100vh;
     font-size: 1rem;
     font-family: 'Roboto Condensed', Arial, sans-serif;
-    background: #121212;
+    background-color: #121212;
 }
 
 #inputTask{
+    width: 100%;
     padding: 0px;
+    border-bottom: solid 1px #ccc;
     margin-bottom: 1rem;
-    font-size: 1.7rem;
-    border-radius: 5px;
+    font-size: 1rem;
 }
 
 #BotaoSubmit{
-    
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     border-radius: 5px;
     background: #de3f53;
     color: #fff;
     border: none;
     cursor: pointer;
-    padding: 0.3rem;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 10px #121212;
 }
 
 #Alinharbotao{
@@ -52,15 +52,7 @@ body{
 }
 
 footer {
-    padding: 1.5rem;
-}
-
-#data1{
-    width: 40%;
-}
-
-#data2{
-    width: 40%;
+    padding: 1rem;
 }
 
 footer label {
@@ -68,7 +60,7 @@ footer label {
 }
 
 .toDoList{
-    width: 100%;
+    width: 95%;
     max-width: 600px;
 }
 
@@ -146,6 +138,10 @@ footer label {
     text-decoration: line-through;
 }
 
+.wrapper-list ul.list .task{
+    width: 90%;
+}
+
 .wrapper-list button.remove{
     position: absolute;
     top: 20px;
@@ -175,10 +171,9 @@ footer label {
     background-color: #171d37;
     border: none;
     outline: none;
-    width: 90%;
-    padding: 20px;
+    padding: 10px;
     font-family: "Roboto Condensed", Arial, sans-serif;
-    font-size: 1.2em;
+    font-size: 1rem;
     color: white;
 }
 
