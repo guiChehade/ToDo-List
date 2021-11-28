@@ -13,16 +13,7 @@ const Main = {
         this.$inputTask = document.querySelector('#inputTask')
         this.$list = document.querySelector('#list')
         this.$removeButtons = document.querySelectorAll('.remove')
-        this.$submitButton = document.querySelector('#submitButton')
-        this.$dataInput = document.querySelector('#data1')
-        const data = new Date();
-        const dia = data.getDate();
-        const mes = data.getMonth() + 1;
-        const ano = data.getFullYear();
-        this.$dataAtual = `${ano}-${mes}-${dia}`;
-        this.$dataInput.value = this.$dataAtual;
-
-        console.log(this.$dataInput);
+        this.$BotaoSubmit = document.querySelector('#BotaoSubmit')
     },
     bindEvents: function () {
         // Bind the events
@@ -32,7 +23,6 @@ const Main = {
         })
 
         this.$inputTask.onkeypress = this.Events.inputTask_keypress.bind(this)
-
 
         this.$removeButtons.forEach(button => {
             button.addEventListener('click', this.Events.removeButton_click)

@@ -7,22 +7,9 @@
     <title>Lista de Tarefas</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  
   <body>
     <div class="toDoList">
-      <header>Lista de Tarefas
-        <div class="flex-row">
-          <div class="datas">
-            <label for="data1">Data da criação:</label>
-            <input type="date" name="data1" id="data1" disabled/>
-          </div>
-          <div class="datas">
-            <label for="data2">Data limite:</label>
-            <input type="date" name="data2" id="data2"/>
-          </div>
-        </div>
-
-      </header>
+      <header>Lista de Tarefas</header>
 
       <section class="wrapper-list">
         <ul id="list" class="list"></ul>
@@ -34,9 +21,16 @@
           type="text"
           placeholder="Digite uma tarefa e aperte 'Enter'."
         />
-
-        <div id="alinharBotao">
-          <button id="submitButton">Adicione</button>
+        <div>
+          <label for="data1">Data da criação:</label>
+          <input type="date" name="data1" id="data1" />
+        </div>
+        <div>
+          <label for="data2">Data limite:</label>
+          <input type="date" name="data2" id="data2" />
+        </div>
+        <div id="Alinharbotao">
+          <button id="BotaoSubmit">Adicione</button>
         </div>
       </footer>
     </div>
