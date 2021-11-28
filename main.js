@@ -14,6 +14,13 @@ const Main = {
         this.$list = document.querySelector('#list')
         this.$removeButtons = document.querySelectorAll('.remove')
         this.$BotaoSubmit = document.querySelector('#BotaoSubmit')
+        this.$dataInput = document.querySelector('#data1')
+        const data = new Date();
+        const dia = data.getDate();
+        const mes = data.getMonth() + 1;
+        const ano = data.getFullYear();
+        this.$dataAtual = `${ano}-${mes}-${dia}`;
+        this.$dataInput.value = this.$dataAtual;
     },
     bindEvents: function () {
         // Bind the events
