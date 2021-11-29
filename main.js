@@ -17,6 +17,7 @@ const Main = {
         this.$dataInput = document.querySelector('#data1')
         this.$dataInput2 = document.querySelector('#data2')
         const data = new Date();
+        this.$data = data
         const dia = data.getDate();
         const mes = data.getMonth() + 1;
         const ano = data.getFullYear();
@@ -51,18 +52,16 @@ const Main = {
         },
 
         inputTask_click: function (event) {
-            // this.validacao.validarinput();
-            console.log(event)
             if (this.$inputTask.value.length < 11) {
                 alert("Por favor, a tarefa deve ter mais que dez caracteres");
             } else if (this.$dataInput2.value < this.$dataInput.value) {
-                alert("Por favor, a data limite não pode ser anterior à data de criação");
-            } else {            
+                alert("Por favor, a data limite não pode ser anterior à data atual");
+            } else {
                 this.$list.innerHTML += `
                     <li>
                         <div class="check"></div>
                         <label class="task">
-                        Criado em: ${this.$dataAtual}, Limite: ${this.$dataInput2.value}, ${this.$inputTask.value}
+                        Criado em: ${this.$data.toLocaleDateString("pt-BR")}, Limite: ${new Date(this.$dataInput2.value).toLocaleDateString("pt-BR")}, ${this.$inputTask.value}
                         </label>
                         <button class="remove"></button>
                     </li>
