@@ -18,12 +18,13 @@ const Main = {
         this.$dataInput2 = document.querySelector('#data2')
         const data = new Date();
         this.$data = data
-        const dia = data.getDate();
-        const mes = data.getMonth() + 1;
+        const dia = data.getDate().toString().padStart(2, '0')
+        const mes = (data.getMonth()+1).toString().padStart(2, '0')
         const ano = data.getFullYear();
         this.$dataAtual = `${ano}-${mes}-${dia}`;
         this.$dataInput.value = this.$dataAtual;
-    },   
+        console.log(this.$data.getDate());
+    },
     
     
     bindEvents: function () {
