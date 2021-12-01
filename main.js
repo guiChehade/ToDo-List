@@ -23,7 +23,6 @@ const Main = {
         const ano = data.getFullYear();
         this.$dataAtual = `${ano}-${mes}-${dia}`;
         this.$dataInput.value = this.$dataAtual;
-        console.log(this.$data.getDate());
     },
     
     
@@ -53,6 +52,7 @@ const Main = {
         },
 
         inputTask_click: function (event) {
+
             if (this.$inputTask.value.length < 11) {
                 alert("Por favor, a tarefa deve ter mais que dez caracteres");
             } else if (this.$dataInput2.value < this.$dataInput.value) {
@@ -62,7 +62,7 @@ const Main = {
                     <li>
                         <div class="check"></div>
                         <label class="task">
-                        Criado em: ${this.$data.toLocaleDateString("pt-BR")}, Limite: ${new Date(this.$dataInput2.value).toLocaleDateString("pt-BR")}, ${this.$inputTask.value}
+                        Criado em: ${this.$data.toLocaleDateString("pt-BR")}, Limite: ${new Date(this.$dataInput2.value).toLocaleDateString("pt-BR", {timeZone: 'UTC'})}, ${this.$inputTask.value}
                         </label>
                         <button class="remove"></button>
                     </li>
