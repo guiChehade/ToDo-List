@@ -44,7 +44,31 @@ main{
     background: #de3f53;
     color: #fff;
     font-size: 1.3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.toDoList header ul li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.toDoList header ul li a{
+    color: white;
+    text-decoration: none;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    padding: 5px 20px;
+    background: #de3f53;
+    filter: drop-shadow(1px 1px 2px #121212);
+}
+
+.toDoList header
 
 .wrapper-list ul.list{
     padding: 0;
@@ -158,7 +182,7 @@ main{
 }
 
 #BotaoSubmit{
-    font-size: 1rem;
+    font-size: 1.2rem;
     border-radius: 5px;
     background: #de3f53;
     color: #fff;
@@ -166,8 +190,10 @@ main{
     cursor: pointer;
     padding: 0.5rem;
     margin: 1rem;
-    box-shadow: 1px 1px 10px #121212;
+    border: solid 1px #ccc;
+    filter: drop-shadow(1px 1px 5px #121212);
 }
+
 
 @keyframes collapseItem{
     0%{
