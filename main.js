@@ -54,9 +54,17 @@ const Main = {
         inputTask_click: function (event) {
 
             if (this.$inputTask.value.length < 11) {
-                alert("Por favor, a tarefa deve ter mais que dez caracteres");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Tarefa Inválida',	
+                    text: 'Favor digitar uma tarefa com mais de 10 caracteres',
+                  })
             } else if (this.$dataInput2.value < this.$dataInput.value) {
-                alert("Por favor, a data limite não pode ser anterior à data atual");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Data Inválida',	
+                    text: 'Por favor, a data limite não pode ser anterior à data atual'
+                  })
             } else {
                 this.$list.innerHTML += `
                     <li>
@@ -77,12 +85,23 @@ const Main = {
         removeButton_click: function (event) {
             let li = event.target.parentElement
 
-            if (confirm('Tem certeza que deseja remover esta tarefa?')) {
+        Swal.fire({
+            title: 'Tem certeza que deseja excluir?',
+            text: "Essa ação é irreversível!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sim, quero deletar!',
+            cancelButtonText: 'Não, me enganei!'
+        }).then((result) => {
+            if (result.isConfirmed) {
                 li.classList.add('removed')
                 setTimeout(() => {
-                li.classList.add('hidden')
-            }, 300)
+                    li.classList.add('hidden')
+                }, 300)
             }
+        })
         }
     }
 }
